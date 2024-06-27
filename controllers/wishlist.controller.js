@@ -4,12 +4,6 @@ const getMovies = async(req, res, next) =>{
     try {
         const movies = await Wishlist.find();
 
-        // const movieData = movies.map(mov => ({
-        //     id:mov.id,
-            
-
-        // }))
-        console.log(movies)
         res.json(movies);
 
     } catch (error) {
@@ -106,8 +100,6 @@ const rateMovie  = async(req, res, next) =>{
     try{
         const ID = req.params.id;
         const {rating} = req.body;
-
-        console.log(rating, ID);
 
         const movie = await Wishlist.findById(ID);
         if(!movie) return next(console.log("error"));
