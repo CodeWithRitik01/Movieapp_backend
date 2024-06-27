@@ -1,5 +1,5 @@
 const corsOptions ={
-    origin: process.env.CLIENT_URL,
+    origin: "https://movieapp-frontend-pied.vercel.app",
     credentials: true,
 }
 
