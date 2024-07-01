@@ -22,6 +22,7 @@ const AddMovie = async(req, res, next) =>{
             genre, 
             imgUrl,
             rating:0,
+            watched:false
         })
 
         return res.status(201).json({
