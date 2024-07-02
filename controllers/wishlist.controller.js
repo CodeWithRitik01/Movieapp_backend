@@ -14,6 +14,11 @@ const getMovies = async(req, res, next) =>{
 const AddMovie = async(req, res, next) =>{
     try{
         const {title, description, release_year, genre, imgUrl} = req.body;
+        const movies = await Wishlist.findOne({title:title});
+        if(movies) return next(res.status(409).json({
+            success:false,
+            message:"movie already in watchlist"
+         }));
 
         await Wishlist.create({
             title, 
